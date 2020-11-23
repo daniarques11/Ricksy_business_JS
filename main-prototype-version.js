@@ -27,54 +27,35 @@
  * Como es una AndromedanExpress
  * el crédito inicial es de 3000 EZIS
  */
-function defineCreditCard(name, number) {
-    var record = {
-        name: name,
-        number: number,
-        credit: 3000
+function CreditCard(name, number) {
+    this.name = name;
+    this.number = number;
+    this.credit = 3000;
+}
+// this.pay = function(amount) {
+//     if (amount <= this.credit) {
+//         this.credit -= amount;
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+function instanceCreditCard(name, number) {
+    var card = new CreditCard(name, number);
+
+    function getCard() {
+        return card;
     }
 
-    var publicAPI = {
-        pay,
-        getNumber,
-        getName,
-        getCredit,
-        toString
-    }
-
-
-    return publicAPI;
-
-    function pay(amount) {
-        if (amount <= record.credit) {
-            record.credit -= amount;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function getNumber() {
-        return record.number;
-    }
-
-    function getName() {
-        return record.name;
-    }
-
-    function getCredit() {
-        return record.credit;
-    }
-
-    function toString() {
-        return "Name: " + record.name + ", Number: " + record.number + ", Credit: " + record.credit;
+    return {
+        getCard
     }
 }
-var abradolph = defineCreditCard("Abradolph Lincler", "4916119711304546");
+var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
-console.log(abradolph.toString());
+console.log(abradolph.getCard());
 
 /**
  * Construye el componente de reserva de Ovnis.
@@ -87,75 +68,60 @@ console.log(abradolph.toString());
  */
 
 // Da de alta en la flota de ovnis 2 UFOS.
-var UfosPark = (function defineUfosPark() {
-    var record = {
-        fee: 500,
-        flota: {}
-    };
-
-    var publicAPI = {
-        add,
-        getUfoOf,
-        dispatch,
-        getFlota
-    }
-
-    return publicAPI;
-
-    function add(ufo) {
-        if (!(ufo in record.flota)) {
-            record.flota[ufo] = null;
-        }
-    }
-
-    function getUfoOf(cardNumber) {
-        let ufoID = null;
-        if (Object.values(record.flota).indexOf(cardNumber) > -1) {
-            for (let ufo of Object.keys(record.flota)) {
-                if (record.flota[ufo] == cardNumber) {
-                    ufoID = ufo;
-                    break;
-                }
-            }
-        }
-        return ufoID;
-    }
-
-    function dispatch(client) {
-        let assignUfo;
-        if (Object.values(record.flota).indexOf(client.getNumber()) == -1) {
-            for (let ufo of Object.keys(record.flota)) {
-                if (record.flota[ufo] == null) {
-                    assignUfo = ufo;
-                    break;
-                }
-            }
-        }
-        if (assignUfo != null && client.pay(record.fee)) {
-            record.flota[assignUfo] = client.getNumber();
-        }
-    }
-
-    function getFlota() {
-        return record.flota;
-    }
-})();
-var ufosID = ["unx", "dox"];
-for (let ufo of ufosID) {
-    UfosPark.add(ufo);
+function UfosPark() {
+    this.fee = 500;
+    this.flota = new Map();
 }
 
-console.log(UfosPark);
+
+var ufos = (function defineUfosPark() {
+    var ufosParkInstance = new UfosPark();
+
+    return ufosParkInstance;
 
 
-UfosPark.dispatch(abradolph);
+})();
+UfosPark.prototype.add = function(ufo) {
+    if (!(this.flota.has(ufo))) {
+        this.flota.set(ufo, null);
+    }
+}
+UfosPark.prototype.getUfoOf = function(cardNumber) {
+    for (let entry of this.flota.entries()) {
+        if (entry[1] == cardNumber) return entry[0];
+    }
+    return null;
+}
+var ufosID = ["unx", "dox"];
+for (let ufo of ufosID) {
+    ufos.add(ufo);
+}
+
+console.log(ufos);
+
+UfosPark.prototype.dispatch = function(client) {
+    let assignUfo;
+    if (Object.values(this.flota).indexOf(client.number) == -1) {
+        for (let ufo of Object.keys(this.flota)) {
+            if (this.flota[ufo] == null) {
+                assignUfo = ufo;
+                break;
+            }
+        }
+    }
+    if (assignUfo != null && client.pay(this.fee)) {
+        this.flota[assignUfo] = client.number;
+    }
+}
+
+ufos.dispatch(abradolph);
 // Mostramos el ID del ovni asignado a Abradolph
 console.log("\nOvni de Abradolph" + " \n" +
     "=================");
-console.log(UfosPark.getUfoOf(abradolph.getNumber()) + "\n");
+console.log(ufos.getUfoOf(abradolph.number) + "\n");
 
 // Mostramos el credito de la tarjeta del cliente
-console.log("Credito de Abradolph: " + abradolph.getCredit());
+console.log("Credito de Abradolph: " + abradolph.credit);
 
 // Procesamos el pago y reserva de ovni de Abradolph
 
@@ -166,9 +132,9 @@ console.log("Credito de Abradolph: " + abradolph.getCredit());
 
 console.log("\nAbradolph quiere otro ovni\n" +
     "==========================");
-UfosPark.dispatch(abradolph);
-console.log("Su credito no ha cambiado: " + abradolph.getCredit());
-console.log("Ovni de Abradolph: " + UfosPark.getUfoOf(abradolph.getNumber()));
+ufos.dispatch(abradolph);
+console.log("Su credito no ha cambiado: " + abradolph.credit);
+console.log("Ovni de Abradolph: " + ufos.getUfoOf(abradolph.number));
 
 // A GearHead le vacía la tarjeta el alien "Cámara Lenta" 
 // mientras le daba la chapa, justo antes de pagar el ovni.
@@ -177,43 +143,43 @@ console.log("Ovni de Abradolph: " + UfosPark.getUfoOf(abradolph.getNumber()));
 
 console.log("\nLLega GearHead!\n" +
     "===============");
-var gearHead = defineCreditCard("Gearhead", "8888888888888888");
+var gearHead = instanceCreditCard("Gearhead", "8888888888888888");
 
 
 gearHead.pay(3000); // le vacían la cartera
 
-UfosPark.dispatch(gearHead);
-console.log("Su credito es cero: " + gearHead.getCredit());
-console.log("No puede reservar ovni: " + UfosPark.getUfoOf(gearHead.getNumber()));
+ufos.dispatch(gearHead);
+console.log("Su credito es cero: " + gearHead.credit);
+console.log("No puede reservar ovni: " + ufos.getUfoOf(gearHead.number));
 
 // Squanchy deja su ovni reservado
 // antes de irse a squanchear
 
 console.log("\nLLega Squanchy!\n" +
     "==============");
-var squanchy = defineCreditCard("Squanchy", "4444444444444444");
+var squanchy = instanceCreditCard("Squanchy", "4444444444444444");
 
-UfosPark.dispatch(squanchy);
-console.log("Su credito es: " + squanchy.getCredit());
-console.log("Su ovni es: " + UfosPark.getUfoOf(squanchy.getNumber()));
+ufos.dispatch(squanchy);
+console.log("Su credito es: " + squanchy.credit);
+console.log("Su ovni es: " + ufos.getUfoOf(squanchy.number));
 
 // Morty quiere un ovni para huir de la fiesta
 // pero ya no queda ninguno disponible
 
 console.log("\nAlgun ovni para Morty?\n" +
     "======================");
-var morty = defineCreditCard("Morty", "0000000000000000");
-UfosPark.dispatch(morty);
-console.log("Su credito no ha cambiado: " + morty.getCredit());
-console.log("No hay ovni Morty: " + UfosPark.getUfoOf(morty.getNumber()));
+var morty = instanceCreditCard("Morty", "0000000000000000");
+ufos.dispatch(morty);
+console.log("Su credito no ha cambiado: " + morty.credit);
+console.log("No hay ovni Morty: " + ufos.getUfoOf(morty.number));
 
 // Metemos un ovni más en la flota de ovnis
 // y mostramos la flota por consola
 
 console.log("\nFlota de ovnis\n" +
     "==============");
-UfosPark.add("trex");
-console.log(UfosPark.getFlota());
+ufos.add("trex");
+console.log(ufos);
 
 
 /**
@@ -222,50 +188,35 @@ console.log(UfosPark.getFlota());
  * uno de ellos, que es de 50 EZIs
  */
 
-function definePackExpender(amount, price) {
-    var record = {
-        amount: amount,
-        price: price
-    }
-
-    var publicAPI = {
-        dispatch,
-        getAmount
-    }
-
-    return publicAPI;
-
-    function dispatch(client) {
-        if (record.amount > 0 && client.pay(record.price)) {
-            record.amount -= 1;
+var PackExpender = {
+    amount: 3,
+    price: 50,
+    dispatch: function(client) {
+        if (this.amount > 0 && client.pay(this.price)) {
+            this.amount -= 1;
         }
     }
-
-    function getAmount() {
-        return record.amount;
-    }
-}
-var PackExpender = definePackExpender(3, 50);
+};
 
 // Muestra el total de packs y su precio unidad
 console.log("\nPacks\n" +
     "=====");
-console.log(PackExpender.getAmount());
+console.log(PackExpender);
 
 // Abradolph compra su pack de bienvenida
 PackExpender.dispatch(abradolph);
 
 console.log("\nAbradolph compra su pack\n" +
     "========================");
-console.log("Packs\n" + PackExpender.getAmount());
-console.log("Credito de Abradolph: " + abradolph.getCredit());
+console.log("Packs\n" + PackExpender.amount);
+console.log("Credito de Abradolph: " + abradolph.credit);
 
 // El pobre GerHead no tiene crédito para comprar su pack
 console.log("\nGearHead sin credito para su pack\n" +
     "=================================");
 PackExpender.dispatch(gearHead);
-console.log("Packs\n" + PackExpender.getAmount());
-console.log("Credito de GearHead: " + gearHead.getCredit());
+console.log("Packs\n" + PackExpender.amount);
+console.log("Credito de GearHead: " + gearHead.credit);
 
 
 /**
@@ -277,29 +228,21 @@ console.log("Credito de GearHead: " + gearHead.getCredit());
  * y registra (añade) los componentes UfosPark
  * y CrystalDispatcher al receptivo
  */
+console.log("                 eipfhweoifheoifhewoi");
 
-var receptivo = (function defineReceptivo() {
-    var observers = [];
-
-    var publicAPI = {
-        register,
-        dispatch
-    }
-
-    return publicAPI;
-
-    function register(observer) {
-        observers.push(observer);
-    }
-
-    function dispatch(client) {
-        for (let observer of observers) {
+var receptivo = {
+    observers: [],
+    register: function(observer) {
+        this.observers.push(observer);
+    },
+    dispatch: function(client) {
+        for (let observer of this.observers) {
             observer.dispatch(client);
         }
     }
-})();
+}
 receptivo.register(PackExpender);
-receptivo.register(UfosPark);
+receptivo.register(ufos);
 
 // Implementa el metodo receptivo.dispatch()
 // para que invoque a UfosPark.dispatch()
@@ -312,9 +255,9 @@ console.log("\nLLega Squanchy!\n" +
 receptivo.dispatch(squanchy);
 
 function mostrarReserva(client) {
-    console.log(client.toString());
-    console.log("Packs: " + PackExpender.getAmount());
-    console.log("Ufo: " + UfosPark.getUfoOf(client.getNumber()))
+    console.log(client);
+    console.log("Packs: " + PackExpender.amount);
+    console.log("Ufo: " + ufos.getUfoOf(client.number))
 }
 mostrarReserva(squanchy);
 
@@ -331,14 +274,14 @@ mostrarReserva(gearHead);
 
 console.log("\nLLega Birdpearson!\n" +
     "==================");
-var birdpearson = defineCreditCard("Birdpearson", "1111111111111111");
+var birdpearson = instanceCreditCard("Birdpearson", "1111111111111111");
 receptivo.dispatch(birdpearson);
 mostrarReserva(birdpearson);
 
 // Morty intenta reserver un ovni y un pack pero no quedan
 console.log("\nMorty quiere pack y ovni pero no quedan :(\n" +
     "==========================================");
-morty = defineCreditCard("Morty", "0000000000000000");
+morty = instanceCreditCard("Morty", "0000000000000000");
 receptivo.dispatch(morty);
 mostrarReserva(morty);
 
@@ -359,36 +302,17 @@ mostrarReserva(morty);
 
 */
 
-var Menu = (function defineMenu() {
-    var record = {
-        amount: 100,
-        price: 100,
-        orders: []
-    };
-
-    var publicAPI = {
-        dispatch,
-        getOrders,
-        getAmount
-    }
-
-    return publicAPI;
-
-    function dispatch(client) {
-        if (record.amount > 0 && client.pay(record.price)) {
-            record.amount -= 1;
-            record.orders.push(client.getName());
+var Menu = {
+    amount: 100,
+    price: 100,
+    orders: [],
+    dispatch: function(client) {
+        if (this.amount > 0 && client.pay(this.price)) {
+            this.amount -= 1;
+            this.orders.push(client.name);
         }
     }
-
-    function getOrders() {
-        return record.orders;
-    }
-
-    function getAmount() {
-        return record.amount;
-    }
-})();
+};
 
 
 receptivo.register(Menu);
@@ -401,14 +325,11 @@ for (let card of creditCards) {
 
 console.log("\nPedidos de RickMenus:\n" +
     "=====================");
-console.log(Menu.getOrders());
+console.log(Menu);
 
-console.log("RickMenus restantes:\n" +
-    "=====================");
-console.log(Menu.getAmount());
 console.log("\nCreditos de los invitados/as:\n" +
     "=============================");
 
 for (let card of creditCards) {
-    console.log(card.toString());
+    console.log(card);
 }
