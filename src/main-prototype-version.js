@@ -32,30 +32,25 @@ function CreditCard(name, number) {
     this.number = number;
     this.credit = 3000;
 }
-// this.pay = function(amount) {
-//     if (amount <= this.credit) {
-//         this.credit -= amount;
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
+CreditCard.prototype.pay = function(amount) {
+    if (amount <= this.credit) {
+        this.credit -= amount;
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function instanceCreditCard(name, number) {
     var card = new CreditCard(name, number);
 
-    function getCard() {
-        return card;
-    }
-
-    return {
-        getCard
-    }
+    return card;
 }
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
-console.log(abradolph.getCard());
+console.log(abradolph);
 
 /**
  * Construye el componente de reserva de Ovnis.
@@ -72,7 +67,6 @@ function UfosPark() {
     this.fee = 500;
     this.flota = new Map();
 }
-
 
 var ufos = (function defineUfosPark() {
     var ufosParkInstance = new UfosPark();
@@ -101,16 +95,16 @@ console.log(ufos);
 
 UfosPark.prototype.dispatch = function(client) {
     let assignUfo;
-    if (Object.values(this.flota).indexOf(client.number) == -1) {
-        for (let ufo of Object.keys(this.flota)) {
-            if (this.flota[ufo] == null) {
-                assignUfo = ufo;
+    if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
+        for (let entry of this.flota.entries()) {
+            if (entry[1] == null) {
+                assignUfo = entry;
                 break;
             }
         }
     }
     if (assignUfo != null && client.pay(this.fee)) {
-        this.flota[assignUfo] = client.number;
+        this.flota.set(assignUfo[0], client.number);
     }
 }
 
