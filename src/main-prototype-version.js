@@ -309,9 +309,9 @@ mostrarReserva(morty);
 */
 
 function Menu(amount) {
-    this.amount = amount,
-        this.price = 100,
-        this.orders = [];
+    this.amount = amount;
+    this.price = 100;
+    this.orders = [];
 };
 
 var menu = (function() {
