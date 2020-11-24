@@ -182,34 +182,40 @@ console.log(ufos);
  * uno de ellos, que es de 50 EZIs
  */
 
-var PackExpender = {
-    amount: 3,
-    price: 50,
-    dispatch: function(client) {
-        if (this.amount > 0 && client.pay(this.price)) {
-            this.amount -= 1;
-        }
+function PackExpender(amount) {
+    this.amount = amount;
+    this.price = 50;
+}
+var packExpender = (function() {
+    var pack = new PackExpender(3);
+
+    return pack;
+})();
+
+PackExpender.prototype.dispatch = function dispatch(client) {
+    if (this.amount > 0 && client.pay(this.price)) {
+        this.amount -= 1;
     }
-};
+}
 
 // Muestra el total de packs y su precio unidad
 console.log("\nPacks\n" +
     "=====");
-console.log(PackExpender);
+console.log(packExpender);
 
 // Abradolph compra su pack de bienvenida
-PackExpender.dispatch(abradolph);
+packExpender.dispatch(abradolph);
 
 console.log("\nAbradolph compra su pack\n" +
     "========================");
-console.log("Packs\n" + PackExpender.amount);
+console.log("Packs\n" + packExpender.amount);
 console.log("Credito de Abradolph: " + abradolph.credit);
 
 // El pobre GerHead no tiene crédito para comprar su pack
 console.log("\nGearHead sin credito para su pack\n" +
     "=================================");
-PackExpender.dispatch(gearHead);
-console.log("Packs\n" + PackExpender.amount);
+packExpender.dispatch(gearHead);
+console.log("Packs\n" + packExpender.amount);
 console.log("Credito de GearHead: " + gearHead.credit);
 
 
@@ -222,20 +228,26 @@ console.log("Credito de GearHead: " + gearHead.credit);
  * y registra (añade) los componentes UfosPark
  * y CrystalDispatcher al receptivo
  */
-console.log("                 eipfhweoifheoifhewoi");
 
-var receptivo = {
-    observers: [],
-    register: function(observer) {
-        this.observers.push(observer);
-    },
-    dispatch: function(client) {
-        for (let observer of this.observers) {
-            observer.dispatch(client);
-        }
-    }
+function Receptivo() {
+    this.observers = [];
 }
-receptivo.register(PackExpender);
+
+var receptivo = (function() {
+    var instanceReceptivo = new Receptivo();
+
+    return instanceReceptivo;
+})();
+
+Receptivo.prototype.register = function(observer) {
+    this.observers.push(observer);
+};
+Receptivo.prototype.dispatch = function(client) {
+    for (let observer of this.observers) {
+        observer.dispatch(client);
+    }
+};
+receptivo.register(packExpender);
 receptivo.register(ufos);
 
 // Implementa el metodo receptivo.dispatch()
@@ -250,7 +262,7 @@ receptivo.dispatch(squanchy);
 
 function mostrarReserva(client) {
     console.log(client);
-    console.log("Packs: " + PackExpender.amount);
+    console.log("Packs: " + packExpender.amount);
     console.log("Ufo: " + ufos.getUfoOf(client.number))
 }
 mostrarReserva(squanchy);
@@ -296,20 +308,26 @@ mostrarReserva(morty);
 
 */
 
-var Menu = {
-    amount: 100,
-    price: 100,
-    orders: [],
-    dispatch: function(client) {
-        if (this.amount > 0 && client.pay(this.price)) {
-            this.amount -= 1;
-            this.orders.push(client.name);
-        }
-    }
+function Menu(amount) {
+    this.amount = amount,
+        this.price = 100,
+        this.orders = [];
 };
 
+var menu = (function() {
+    var instanceMenu = new Menu(100);
 
-receptivo.register(Menu);
+    return instanceMenu;
+})();
+
+Menu.prototype.dispatch = function(client) {
+    if (this.amount > 0 && client.pay(this.price)) {
+        this.amount -= 1;
+        this.orders.push(client.name);
+    }
+}
+
+receptivo.register(menu);
 
 var creditCards = [abradolph, squanchy, morty, gearHead, birdpearson];
 
@@ -319,7 +337,7 @@ for (let card of creditCards) {
 
 console.log("\nPedidos de RickMenus:\n" +
     "=====================");
-console.log(Menu);
+console.log(menu);
 
 console.log("\nCreditos de los invitados/as:\n" +
     "=============================");
