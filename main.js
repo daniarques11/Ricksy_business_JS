@@ -5,6 +5,7 @@
  */
 const instanceCreditCard = require("./modules/creditCard.js").instanceCreditCard;
 const singletonUfosPark = require("./modules/ufosPark.js").singletonUfosPark;
+const instancePackExpender = require("./modules/packExpender.js").instancePackExpender;
 
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 var ufos = singletonUfosPark();
@@ -36,7 +37,6 @@ Object.getPrototypeOf(ufos).dispatch = function(client) {
         this.flota.set(assignUfo[0], client.number);
     }
 }
-
 ufos.dispatch(abradolph);
 // Mostramos el ID del ovni asignado a Abradolph
 console.log("\nOvni de Abradolph" + " \n" +
@@ -55,7 +55,7 @@ console.log("Credito de Abradolph: " + abradolph.credit);
 
 console.log("\nAbradolph quiere otro ovni\n" +
     "==========================");
-ufos.dispatch(abradolph);
+
 console.log("Su credito no ha cambiado: " + abradolph.credit);
 console.log("Ovni de Abradolph: " + ufos.getUfoOf(abradolph.number));
 
@@ -111,17 +111,9 @@ console.log(ufos);
  * uno de ellos, que es de 50 EZIs
  */
 
-function PackExpender(amount) {
-    this.amount = amount;
-    this.price = 50;
-}
-var packExpender = (function() {
-    var pack = new PackExpender(3);
+var packExpender = instancePackExpender(3);
 
-    return pack;
-})();
-
-PackExpender.prototype.dispatch = function dispatch(client) {
+Object.getPrototypeOf(packExpender).dispatch = function dispatch(client) {
     if (this.amount > 0 && client.pay(this.price)) {
         this.amount -= 1;
     }

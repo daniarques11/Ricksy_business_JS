@@ -26,6 +26,5 @@ var singletonUfosPark = (function() {
         }
     };
 })();
-console.log(singletonUfosPark);
+
 module.exports.singletonUfosPark = singletonUfosPark.getUfosPark;
-console.log(module.exports);

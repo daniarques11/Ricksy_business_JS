@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "creditCard": "/modules/creditCard.js",
+        "packExpender": "/modules/packExpender.js",
         "ufosPark": "/modules/ufosPark.js"
     },
     "repository": {

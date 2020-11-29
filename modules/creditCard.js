@@ -20,6 +20,4 @@ function instanceCreditCard(name, number) {
     return card;
 }
 
-console.log(instanceCreditCard);
 module.exports.instanceCreditCard = instanceCreditCard;
-console.log(module.exports);
