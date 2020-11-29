@@ -1,15 +1,13 @@
-/**
- * Crea una tarjeta de crédito para Abradolph.
- * Como es una AndromedanExpress
- * el crédito inicial es de 3000 EZIS
- */
 const instanceCreditCard = require("./modules/creditCard").instanceCreditCard;
 const singletonUfosPark = require("./modules/ufosPark").singletonUfosPark;
 const instancePackExpender = require("./modules/packExpender").instancePackExpender;
 const singletonReceptivo = require("./modules/receptivo").singletonReceptivo;
 const singletonMenu = require("./modules/menu").singletonMenu;
 
+//Crear abradolph
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
+
+//Crear ufosPark
 var ufos = singletonUfosPark();
 
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
@@ -17,14 +15,13 @@ console.log("\n" + "Tarjeta de Abradolph" + "\n" +
 console.log(abradolph);
 
 // Da de alta en la flota de ovnis 2 UFOS.
-
 var ufosID = ["unx", "dox"];
 for (let ufo of ufosID) {
     ufos.add(ufo);
 }
-
 console.log(ufos);
 
+//Añadir metodo dispatch al prototip de UfosPark
 Object.getPrototypeOf(ufos).dispatch = function(client) {
     let assignUfo;
     if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
@@ -39,25 +36,22 @@ Object.getPrototypeOf(ufos).dispatch = function(client) {
         this.flota.set(assignUfo[0], client.number);
     }
 }
+
+// Procesamos el pago y reserva de ovni de Abradolph
 ufos.dispatch(abradolph);
+
 // Mostramos el ID del ovni asignado a Abradolph
 console.log("\nOvni de Abradolph" + " \n" +
     "=================");
 console.log(ufos.getUfoOf(abradolph.number) + "\n");
-
 // Mostramos el credito de la tarjeta del cliente
 console.log("Credito de Abradolph: " + abradolph.credit);
-
-// Procesamos el pago y reserva de ovni de Abradolph
-
 
 // La dualidad en Abradolph quiere reservar otro ovni.
 // El sistema detecta que ya tiene uno 
 // e ignora la petición.
-
 console.log("\nAbradolph quiere otro ovni\n" +
     "==========================");
-
 console.log("Su credito no ha cambiado: " + abradolph.credit);
 console.log("Ovni de Abradolph: " + ufos.getUfoOf(abradolph.number));
 
@@ -65,32 +59,25 @@ console.log("Ovni de Abradolph: " + ufos.getUfoOf(abradolph.number));
 // mientras le daba la chapa, justo antes de pagar el ovni.
 // Intenta reservarlo y el componente de reserva de ovnis
 // no le asigna ninguno.
-
 console.log("\nLLega GearHead!\n" +
     "===============");
 var gearHead = instanceCreditCard("Gearhead", "8888888888888888");
-
-
 gearHead.pay(3000); // le vacían la cartera
-
 ufos.dispatch(gearHead);
 console.log("Su credito es cero: " + gearHead.credit);
 console.log("No puede reservar ovni: " + ufos.getUfoOf(gearHead.number));
 
 // Squanchy deja su ovni reservado
 // antes de irse a squanchear
-
 console.log("\nLLega Squanchy!\n" +
     "==============");
 var squanchy = instanceCreditCard("Squanchy", "4444444444444444");
-
 ufos.dispatch(squanchy);
 console.log("Su credito es: " + squanchy.credit);
 console.log("Su ovni es: " + ufos.getUfoOf(squanchy.number));
 
 // Morty quiere un ovni para huir de la fiesta
 // pero ya no queda ninguno disponible
-
 console.log("\nAlgun ovni para Morty?\n" +
     "======================");
 var morty = instanceCreditCard("Morty", "0000000000000000");
@@ -100,21 +87,15 @@ console.log("No hay ovni Morty: " + ufos.getUfoOf(morty.number));
 
 // Metemos un ovni más en la flota de ovnis
 // y mostramos la flota por consola
-
 console.log("\nFlota de ovnis\n" +
     "==============");
 ufos.add("trex");
 console.log(ufos);
 
-
-/**
- * Construye el dispensador de packs de bienvenida.
- * Indica el numero de unidades y el coste de cada
- * uno de ellos, que es de 50 EZIs
- */
-
+// Crear expendedor de cristales
 var packExpender = instancePackExpender(3);
 
+// Añadir metodo dispatch al expendedor de cristales
 Object.getPrototypeOf(packExpender).dispatch = function dispatch(client) {
     if (this.amount > 0 && client.pay(this.price)) {
         this.amount -= 1;
@@ -128,7 +109,6 @@ console.log(packExpender);
 
 // Abradolph compra su pack de bienvenida
 packExpender.dispatch(abradolph);
-
 console.log("\nAbradolph compra su pack\n" +
     "========================");
 console.log("Packs\n" + packExpender.amount);
@@ -141,20 +121,17 @@ packExpender.dispatch(gearHead);
 console.log("Packs\n" + packExpender.amount);
 console.log("Credito de GearHead: " + gearHead.credit);
 
-
-
+// Crear receptivo
 var receptivo = singletonReceptivo();
 receptivo.register(packExpender);
 receptivo.register(ufos);
 
-
-
 // Squanchy reserva ovni (ya tiene) y pack
-
 console.log("\nLLega Squanchy!\n" +
     "===============");
 receptivo.dispatch(squanchy);
 
+//Creamos funcion para imprimir reserva de un cliente
 function mostrarReserva(client) {
     console.log(client);
     console.log("Packs: " + packExpender.amount);
@@ -164,7 +141,6 @@ mostrarReserva(squanchy);
 
 // Gearhead reserva ovni y pack.
 // No tiene crédito.
-
 console.log("\nLLega GearHead!\n" +
     "===============");
 gearHead.pay(3000); // no tiene crédito
@@ -172,7 +148,6 @@ receptivo.dispatch(gearHead);
 mostrarReserva(gearHead);
 
 // Birdpearson es recibido en la fiesta
-
 console.log("\nLLega Birdpearson!\n" +
     "==================");
 var birdpearson = instanceCreditCard("Birdpearson", "1111111111111111");
@@ -186,40 +161,20 @@ morty = instanceCreditCard("Morty", "0000000000000000");
 receptivo.dispatch(morty);
 mostrarReserva(morty);
 
-
-/**
- * A por el 10!! 
- * Wubba lubba dub dub!!
- * 
- * Añade otra tarea al receptivo,
- * de modo que 5 invitados:
- * abradolph, squanchy, morty, gearHead, birdpearson
- * encarguen un RickMenú junto 
- * al ovni y al pack de bienvenida.
- * Hay 100 RickMenús y su precio es de 10 EZIs.
- * Muestra el total de pedidos y la lista de
- * invitados/as (numero de tarjeta) que han hecho un pedido.
- 
-
-*/
-
+/* Crear Rick menu*/
 var menu = singletonMenu();
-
 receptivo.register(menu);
 
+//Repartir menus
 var creditCards = [abradolph, squanchy, morty, gearHead, birdpearson];
-
 for (let card of creditCards) {
     receptivo.dispatch(card);
 }
-
 console.log("\nPedidos de RickMenus:\n" +
     "=====================");
 console.log(menu);
-
 console.log("\nCreditos de los invitados/as:\n" +
     "=============================");
-
 for (let card of creditCards) {
     console.log(card);
 }

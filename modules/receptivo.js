@@ -15,6 +15,7 @@ var singletonReceptivo = (function() {
 Receptivo.prototype.register = function(observer) {
     this.observers.push(observer);
 };
+
 Receptivo.prototype.dispatch = function(client) {
     for (let observer of this.observers) {
         observer.dispatch(client);
