@@ -1,91 +1,20 @@
 /**
- * Ricksy Business
- * ===============
- * Rick se queda a cargo Morty y Summer, 
- * y celebra una pedazo de fiesta. 
- * Entre los invitados hay adolescentes, aliens, 
- * Gearhead, Squanchy, Birdpearson y 
- * Abradolph Lincler (una combinación de DNA
- * de Adolf Hitler y Abraham Lincoln).
- * 
- * Cuando un invitado/a llega a la fiesta, 
- * se le da de alta en el receptivo del sistema
- * mediante su tarjeta de crédito.
- * 
- * El receptivo carga en el crédito de la tarjeta:
- * - El coste del UberOvni de vuelta a casa
- * - El coste del pack de bienvenida (Collaxion crystals).
- * 
- * El componente de reserva de Ovnis y el componente
- * de entrega del pack de bienvenida observan al
- * componente receptivo, de modo que cuando el receptivo
- * da de alta a un invitado/a automáticamente cargan 
- * en la tarjeta del invitado/a el coste de ambos servicios. 
- */
-/**
  * Crea una tarjeta de crédito para Abradolph.
  * Como es una AndromedanExpress
  * el crédito inicial es de 3000 EZIS
  */
-function CreditCard(name, number) {
-    this.name = name;
-    this.number = number;
-    this.credit = 3000;
-}
-CreditCard.prototype.pay = function(amount) {
-    if (amount <= this.credit) {
-        this.credit -= amount;
-        return true;
-    } else {
-        return false;
-    }
-}
+const instanceCreditCard = require("./modules/creditCard.js").instanceCreditCard;
+const singletonUfosPark = require("./modules/ufosPark.js").singletonUfosPark;
 
-function instanceCreditCard(name, number) {
-    var card = new CreditCard(name, number);
-
-    return card;
-}
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
+var ufos = singletonUfosPark();
 
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
 console.log(abradolph);
 
-/**
- * Construye el componente de reserva de Ovnis.
- * Recibe el objeto tarjeta de crédito del invitado/a
- * en el método dispatch(card)
- * y realiza un cargo a la tarjeta.
- * Si hay saldo suficiente se reserva un UberOvni
- * de los que estén libres.
- * El coste del ovni es de 500 EZIs.
- */
-
 // Da de alta en la flota de ovnis 2 UFOS.
-function UfosPark() {
-    this.fee = 500;
-    this.flota = new Map();
-}
 
-var ufos = (function defineUfosPark() {
-    var ufosParkInstance = new UfosPark();
-
-    return ufosParkInstance;
-
-
-})();
-UfosPark.prototype.add = function(ufo) {
-    if (!(this.flota.has(ufo))) {
-        this.flota.set(ufo, null);
-    }
-}
-UfosPark.prototype.getUfoOf = function(cardNumber) {
-    for (let entry of this.flota.entries()) {
-        if (entry[1] == cardNumber) return entry[0];
-    }
-    return null;
-}
 var ufosID = ["unx", "dox"];
 for (let ufo of ufosID) {
     ufos.add(ufo);
@@ -93,7 +22,7 @@ for (let ufo of ufosID) {
 
 console.log(ufos);
 
-UfosPark.prototype.dispatch = function(client) {
+Object.getPrototypeOf(ufos).dispatch = function(client) {
     let assignUfo;
     if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
         for (let entry of this.flota.entries()) {
