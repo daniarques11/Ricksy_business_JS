@@ -6,6 +6,7 @@
 const instanceCreditCard = require("./modules/creditCard.js").instanceCreditCard;
 const singletonUfosPark = require("./modules/ufosPark.js").singletonUfosPark;
 const instancePackExpender = require("./modules/packExpender.js").instancePackExpender;
+const singletonReceptivo = require("./modules/receptivo").singletonReceptivo;
 
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 var ufos = singletonUfosPark();
@@ -150,24 +151,7 @@ console.log("Credito de GearHead: " + gearHead.credit);
  * y CrystalDispatcher al receptivo
  */
 
-function Receptivo() {
-    this.observers = [];
-}
-
-var receptivo = (function() {
-    var instanceReceptivo = new Receptivo();
-
-    return instanceReceptivo;
-})();
-
-Receptivo.prototype.register = function(observer) {
-    this.observers.push(observer);
-};
-Receptivo.prototype.dispatch = function(client) {
-    for (let observer of this.observers) {
-        observer.dispatch(client);
-    }
-};
+var receptivo = singletonReceptivo();
 receptivo.register(packExpender);
 receptivo.register(ufos);
 
