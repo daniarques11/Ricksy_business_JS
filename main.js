@@ -3,10 +3,11 @@
  * Como es una AndromedanExpress
  * el crédito inicial es de 3000 EZIS
  */
-const instanceCreditCard = require("./modules/creditCard.js").instanceCreditCard;
-const singletonUfosPark = require("./modules/ufosPark.js").singletonUfosPark;
-const instancePackExpender = require("./modules/packExpender.js").instancePackExpender;
+const instanceCreditCard = require("./modules/creditCard").instanceCreditCard;
+const singletonUfosPark = require("./modules/ufosPark").singletonUfosPark;
+const instancePackExpender = require("./modules/packExpender").instancePackExpender;
 const singletonReceptivo = require("./modules/receptivo").singletonReceptivo;
+const singletonMenu = require("./modules/menu").singletonMenu;
 
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 var ufos = singletonUfosPark();
@@ -141,23 +142,12 @@ console.log("Packs\n" + packExpender.amount);
 console.log("Credito de GearHead: " + gearHead.credit);
 
 
-/**
- * Vamos a automatizar ahora ambas tareas, de modo que
- * cuando llega un invitado/a se le asiga un ovni
- * y un pack y se realiza el cargo a la tarjeta.
- * 
- * Para ello, crea el componente receptivo
- * y registra (añade) los componentes UfosPark
- * y CrystalDispatcher al receptivo
- */
 
 var receptivo = singletonReceptivo();
 receptivo.register(packExpender);
 receptivo.register(ufos);
 
-// Implementa el metodo receptivo.dispatch()
-// para que invoque a UfosPark.dispatch()
-// y a CrystalExpender.dispatch()
+
 
 // Squanchy reserva ovni (ya tiene) y pack
 
@@ -213,24 +203,7 @@ mostrarReserva(morty);
 
 */
 
-function Menu(amount) {
-    this.amount = amount;
-    this.price = 100;
-    this.orders = [];
-};
-
-var menu = (function() {
-    var instanceMenu = new Menu(100);
-
-    return instanceMenu;
-})();
-
-Menu.prototype.dispatch = function(client) {
-    if (this.amount > 0 && client.pay(this.price)) {
-        this.amount -= 1;
-        this.orders.push(client.name);
-    }
-}
+var menu = singletonMenu();
 
 receptivo.register(menu);
 

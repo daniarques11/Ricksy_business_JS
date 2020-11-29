@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "creditCard": "/modules/creditCard.js",
+        "menu": "/modules/menu.js",
         "packExpender": "/modules/packExpender.js",
         "receptivo": "/modules/receptivo.js",
         "ufosPark": "/modules/ufosPark.js"
