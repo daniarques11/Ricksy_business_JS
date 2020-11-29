@@ -1,24 +1,17 @@
 {
     "name": "ricksy-bussiness",
     "version": "1.0.0",
-    "description": "Ricksy's Bussiness project adaptation to JS.",
+    "description": "Ricksy's Bussiness JS adaptation",
     "main": "main.js",
     "scripts": {
-        "start": "node main.js",
-        "test": "test"
-    },
-    "dependencies": {
-        "creditCard": "/modules/creditCard.js",
-        "menu": "/modules/menu.js",
-        "packExpender": "/modules/packExpender.js",
-        "receptivo": "/modules/receptivo.js",
-        "ufosPark": "/modules/ufosPark.js"
+        "start": "node src/main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/daniarques11/Ricksy_business_JS.git"
     },
-    "author": "Daniel Arqués",
+    "author": "Daniel Arques",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/daniarques11/Ricksy_business_JS/issues"

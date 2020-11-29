@@ -1,15 +1,14 @@
-const instanceCreditCard = require("./modules/creditCard").instanceCreditCard;
-const singletonUfosPark = require("./modules/ufosPark").singletonUfosPark;
-const instancePackExpender = require("./modules/packExpender").instancePackExpender;
-const singletonReceptivo = require("./modules/receptivo").singletonReceptivo;
-const singletonMenu = require("./modules/menu").singletonMenu;
+const instanceCreditCard = require("./credit-card").instanceCreditCard;
+const singletonUfosPark = require("./ufos-park").singletonUfosPark;
+const instancePackExpender = require("./pack-expender").instancePackExpender;
+const singletonReceptivo = require("./receptivo").singletonReceptivo;
+const singletonMenu = require("./menu").singletonMenu;
 
 //Crear abradolph
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 
 //Crear ufosPark
 var ufos = singletonUfosPark();
-
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
 console.log(abradolph);
