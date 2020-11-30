@@ -4,9 +4,7 @@ function PackExpender(amount) {
 }
 
 function instancePackExpender(amount) {
-    var pack = new PackExpender(amount);
-
-    return pack;
+    return new PackExpender(amount);
 }
 
 module.exports.instancePackExpender = instancePackExpender;
