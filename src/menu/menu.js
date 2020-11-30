@@ -4,7 +4,7 @@ function Menu(amount) {
     this.orders = [];
 };
 
-var singletonMenu = (function() {
+var menu = (function() {
     var instanceMenu = new Menu(100);
 
     return {
@@ -21,4 +21,4 @@ Menu.prototype.dispatch = function(client) {
     }
 }
 
-module.exports.singletonMenu = singletonMenu.getMenu;
+module.exports.menu = menu;

@@ -1,8 +1,8 @@
 const instanceCreditCard = require("./credit-card").instanceCreditCard;
-const singletonUfosPark = require("./ufos-park").singletonUfosPark;
 const instancePackExpender = require("./pack-expender").instancePackExpender;
-const singletonReceptivo = require("./receptivo").singletonReceptivo;
-const singletonMenu = require("./menu").singletonMenu;
+const singletonUfosPark = require("./ufos-park").flota;
+const singletonReceptivo = require("./receptivo").receptivo;
+const singletonMenu = require("./menu").menu;
 //TODO: Implementar modulo DISPATCHER
 
 
@@ -11,7 +11,7 @@ const singletonMenu = require("./menu").singletonMenu;
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
 
 //Crear ufosPark
-var ufos = singletonUfosPark();
+var ufos = singletonUfosPark.getUfosPark();
 console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
 console.log(abradolph);
@@ -124,7 +124,7 @@ console.log("Packs\n" + packExpender.amount);
 console.log("Credito de GearHead: " + gearHead.credit);
 
 // Crear receptivo
-var receptivo = singletonReceptivo();
+var receptivo = singletonReceptivo.getReceptivo();
 receptivo.register(packExpender);
 receptivo.register(ufos);
 
@@ -164,7 +164,7 @@ receptivo.dispatch(morty);
 mostrarReserva(morty);
 
 /* Crear Rick menu*/
-var menu = singletonMenu();
+var menu = singletonMenu.getMenu();
 receptivo.register(menu);
 
 //Repartir menus

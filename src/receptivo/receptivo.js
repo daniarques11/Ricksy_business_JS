@@ -2,16 +2,6 @@ function Receptivo() {
     this.observers = [];
 }
 
-var singletonReceptivo = (function() {
-    var instanceReceptivo = new Receptivo();
-
-    return {
-        getReceptivo: function getReceptivo() {
-            return instanceReceptivo;
-        }
-    };
-})();
-
 Receptivo.prototype.register = function(observer) {
     this.observers.push(observer);
 };
@@ -22,4 +12,14 @@ Receptivo.prototype.dispatch = function(client) {
     }
 };
 
-module.exports.singletonReceptivo = singletonReceptivo.getReceptivo;
+var receptivo = (function() {
+    var instanceReceptivo = new Receptivo();
+
+    return {
+        getReceptivo: function getReceptivo() {
+            return instanceReceptivo;
+        }
+    };
+})();
+
+module.exports.receptivo = receptivo;

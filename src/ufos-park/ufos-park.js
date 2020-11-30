@@ -18,7 +18,7 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
 
 /* Exported variable. 
 Singleton pattern, not allowed different UfosPark objects */
-var singletonUfosPark = (function() {
+var flota = (function() {
     var ufosParkInstance = new UfosPark();
 
     return {
@@ -28,4 +28,4 @@ var singletonUfosPark = (function() {
     };
 })();
 
-module.exports.singletonUfosPark = singletonUfosPark.getUfosPark;
+module.exports.flota = flota;
