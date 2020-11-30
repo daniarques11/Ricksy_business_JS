@@ -3,6 +3,9 @@ const singletonUfosPark = require("./ufos-park").singletonUfosPark;
 const instancePackExpender = require("./pack-expender").instancePackExpender;
 const singletonReceptivo = require("./receptivo").singletonReceptivo;
 const singletonMenu = require("./menu").singletonMenu;
+//TODO: Implementar modulo DISPATCHER
+
+
 
 //Crear abradolph
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
