@@ -23,22 +23,6 @@ for (let ufo of ufosID) {
 }
 console.log(ufos);
 
-//Añadir metodo dispatch al prototip de UfosPark
-Object.getPrototypeOf(ufos).dispatch = function(client) {
-    let assignUfo;
-    if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
-        for (let entry of this.flota.entries()) {
-            if (entry[1] == null) {
-                assignUfo = entry;
-                break;
-            }
-        }
-    }
-    if (assignUfo != null && client.pay(this.fee)) {
-        this.flota.set(assignUfo[0], client.number);
-    }
-}
-
 // Procesamos el pago y reserva de ovni de Abradolph
 ufos.dispatch(abradolph);
 
