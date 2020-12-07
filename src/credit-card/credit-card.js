@@ -14,7 +14,6 @@ CreditCard.prototype.pay = function(amount) {
 }
 
 /* Exported method. Allows multiple CreditCard creations */
-//TODO: return directly without declaring var card
 function instanceCreditCard(name, number) {
     return new CreditCard(name, number);
 }
