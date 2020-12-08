@@ -16,7 +16,7 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
     return null;
 }
 
-//Añadir metodo dispatch al prototip de UfosPark
+//Añadir metodo dispatch al prototipo de UfosPark
 UfosPark.prototype.dispatch = function(client) {
     let assignUfo;
     if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
