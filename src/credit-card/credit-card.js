@@ -1,3 +1,4 @@
+/* Describes the information of a client who owns a credit card. Allows them to pay if there's credit left*/
 function CreditCard(name, number) {
     this.name = name;
     this.number = number;
@@ -13,8 +14,7 @@ CreditCard.prototype.pay = function(amount) {
     }
 }
 
-/* Exported method. Allows multiple CreditCard creations */
-//TODO: return directly without declaring var card
+// Exported method. Allows multiple CreditCard creations 
 function instanceCreditCard(name, number) {
     return new CreditCard(name, number);
 }

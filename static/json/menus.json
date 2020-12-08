@@ -1,0 +1,254 @@
+{
+    "China": {
+        "menu1": {
+            "menuCompleto": "Menú Dragón",
+            "plato1": "Dos rollitos de primavera",
+            "plato2": "Ternera en salsa de otras",
+            "plato3": "Helado frito",
+            "plato4": "Refresco o agua",
+            "stck": "53",
+            "price": "12,95",
+            "valoration": "4,2⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Menú Hainan",
+            "plato1": "Ensalada china",
+            "plato2": "Pollo con setas chinas y bambú",
+            "plato3": "Helado frito",
+            "plato4": "Refresco",
+            "stck": "50",
+            "price": "25,95",
+            "valoration": "2,2⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Menú Pekín",
+            "plato1": "Sopa de tiburón",
+            "plato2": "Pato Pekín",
+            "plato3": "Liche en su jugo",
+            "plato4": "Ramune",
+            "stck": "32",
+            "price": "23,59",
+            "valoration": "4,4⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Menú Sichuan",
+            "plato1": "Cerdo agridulce",
+            "plato2": "Chop Suwy de gambas",
+            "plato3": "Helado con almendras",
+            "plato4": "Refresco",
+            "stck": "50",
+            "price": "48,95",
+            "valoration": "3,6⭐"
+        }
+    },
+    "España": {
+        "menu1": {
+            "menuCompleto": "Menú Mallorquín",
+            "plato1": "Sopas Mallorquinas",
+            "plato2": "Huevos fritos con sobrasada",
+            "plato3": "Ensaimada",
+            "plato4": "Agua, gaseosa o cerveza o cualquier tipo de lata",
+            "stck": "50",
+            "price": "13,85",
+            "valoration": "4,5⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Menú Asturiano",
+            "plato1": "Huevos rotos",
+            "plato2": "Cachopo",
+            "plato3": "Chipirones en su tinta",
+            "plato4": "Agua o refresco",
+            "stck": "50",
+            "price": "25,95",
+            "valoration": "2,2⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Menú Andaluz",
+            "plato1": "Melón con jamón",
+            "plato2": "Merluza a la plancha",
+            "plato3": "Tarta de queso",
+            "plato4": "Agua, refresco, cerveza",
+            "stck": "50",
+            "price": "15",
+            "valoration": "4,0⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Menú Madrileño",
+            "plato1": "Callos",
+            "plato2": "Cocido madrileño",
+            "plato3": "Flan de huevo",
+            "plato4": "Agua, refresco, cerveza",
+            "stck": "50",
+            "price": "12,50",
+            "valoration": "3,6⭐"
+        }
+    },
+    "Tailandia": {
+        "menu1": {
+            "menuCompleto": "Khwām s̄uk̄h",
+            "plato1": "Papaya Salad",
+            "plato2": "Salchichas de Chiang mai con arroz ",
+            "plato3": "Mango Sticky Rice",
+            "plato4": "Smothie",
+            "stck": "32",
+            "price": "8,95",
+            "valoration": "4,6⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Portīn bris̄uthṭhi̒",
+            "plato1": "Variado de insectos fritos",
+            "plato2": "Variado de pinchitos(cocodrilo, avestruz y pato)",
+            "plato3": "Durian",
+            "plato4": "Agua de coco",
+            "stck": "50",
+            "price": "9,10",
+            "valoration": "2,6⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Thī̀s̄ud",
+            "plato1": "Pad Thai",
+            "plato2": "Kai Pad Med Mamuang",
+            "plato3": "Mochis rellenos de Helado",
+            "plato4": "Smothie",
+            "stck": "50",
+            "price": "7,55",
+            "valoration": "5,0⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Ḥạlkh",
+            "plato1": "Pad Krapau",
+            "plato2": "Pad Siuw",
+            "plato3": "Helado Tailandés",
+            "plato4": "Smothie con yogur",
+            "stck": "50",
+            "price": "6,65",
+            "valoration": "3,8⭐"
+        }
+    },
+    " Mexico": {
+        "menu1": {
+            "menuCompleto": "Menú de casa",
+            "plato1": "Arroz a la mexicana",
+            "plato2": "Albondigas de pollo en salsa de chile chipodle",
+            "plato3": "Platanos con crema y canela",
+            "plato4": "refresco",
+            "stck": "10",
+            "price": "17,90",
+            "valoration": "4,2⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Menú macho",
+            "plato1": "Chiles en nogada",
+            "plato2": "Tortas ahogadas",
+            "plato3": "Carlota de Limón",
+            "plato4": "Cerveza con tequila y limón",
+            "stck": "7",
+            "price": "15,10",
+            "valoration": "1,8⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Menú suculento",
+            "plato1": "Enchilada",
+            "plato2": "Quesadilla",
+            "plato3": "Brazo de Gitano",
+            "plato4": "Limonada casera",
+            "stck": "50",
+            "price": "20,00",
+            "valoration": "4,8⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Menú Empacho",
+            "plato1": "Tacos",
+            "plato2": "Burritos",
+            "plato3": "Cocadas",
+            "plato4": "Refresco o gaseosa",
+            "stck": "50",
+            "price": "48,95",
+            "valoration": "3,6⭐"
+        }
+    },
+    "Italia": {
+        "menu1": {
+            "menuCompleto": "Menú Roma",
+            "plato1": "Lasaña",
+            "plato2": "Risotto alla milanese",
+            "plato3": "Carpaccio",
+            "plato4": "Agua o refresco",
+            "stck": "50",
+            "price": "14,99",
+            "valoration": "4,6⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Menú Pizza",
+            "plato1": "Pizza",
+            "plato2": "Ensalada carpresse",
+            "plato3": "Ossobuco",
+            "plato4": "Agua o refresco",
+            "stck": "50",
+            "price": "16,50",
+            "valoration": "3,2⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Menú Venecia",
+            "plato1": "Espaguetis a la carbonara",
+            "plato2": "Grissinis",
+            "plato3": "Fainá con carne y berenjane",
+            "plato4": "Agua o refresco",
+            "stck": "50",
+            "price": "12,75",
+            "valoration": "4,3⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Menú David",
+            "plato1": "Agnolotti",
+            "plato2": "Bucatini",
+            "plato3": "La polenta",
+            "plato4": "Agua o refresco",
+            "stck": "35",
+            "price": "20",
+            "valoration": "5,0⭐"
+        }
+    },
+    "Francia": {
+        "menu1": {
+            "menuCompleto": "Menú Auvernia",
+            "plato1": "La potée",
+            "plato2": "Gallo al vino",
+            "plato3": "Pastel de cerezas",
+            "plato4": "vino o gaseosa",
+            "stck": "15",
+            "price": "22,95",
+            "valoration": "4,2⭐"
+        },
+        "menu2": {
+            "menuCompleto": "Menú Valle de Loira",
+            "plato1": "Baguette tostada con queso de cabra",
+            "plato2": "Le mique",
+            "plato3": "Tarta Tartin",
+            "plato4": "vino, gaseosa o refresco",
+            "stck": "62",
+            "price": "15,25",
+            "valoration": "4,0⭐"
+        },
+        "menu3": {
+            "menuCompleto": "Menú Borgoña",
+            "plato1": "Caracoles",
+            "plato2": "Ternera Borgoñana",
+            "plato3": "Crepes Dulces",
+            "plato4": "Vino o gaseosa",
+            "stck": "40",
+            "price": "39,95",
+            "valoration": "4,0⭐"
+        },
+        "menu4": {
+            "menuCompleto": "Picardie",
+            "plato1": "Sopa de Pescado del Touquet",
+            "plato2": "Conejo con Ciruelas",
+            "plato3": "Macarons",
+            "plato4": "Vino o Refresco",
+            "stck": "50",
+            "price": "32,30",
+            "valoration": "4,5⭐"
+        }
+    }
+}

@@ -1,4 +1,7 @@
+/* Stores the information of the ufos available
+When an ufo is assigned to a client, that ufo is no longer available*/
 function UfosPark() {
+    //Not using ufos.json price. Generic cost
     this.fee = 500;
     this.flota = new Map();
 }
@@ -16,7 +19,7 @@ UfosPark.prototype.getUfoOf = function(cardNumber) {
     return null;
 }
 
-//Añadir metodo dispatch al prototip de UfosPark
+//Add dispatch method to UfosPark prototype
 UfosPark.prototype.dispatch = function(client) {
     let assignUfo;
     if (Array.from(this.flota.values()).indexOf(client.number) == -1) {
@@ -32,14 +35,19 @@ UfosPark.prototype.dispatch = function(client) {
     }
 }
 
+UfosPark.prototype.print = function(ufo) {
+    return this.flota.has(ufo) ? `${ufo.Marca} ${ufo.Modelo}` : "No ufo";
+
+}
+
 /* Exported variable. 
 Singleton pattern, not allowed different UfosPark objects */
 var flota = (function() {
-    var ufosParkInstance = new UfosPark();
+    var singletonUfosPark = new UfosPark();
 
     return {
         getUfosPark: function getUfosPark() {
-            return ufosParkInstance;
+            return singletonUfosPark;
         }
     };
 })();
