@@ -1,9 +1,11 @@
 const singletonMenu = require("../menu").menu;
 
 var menu;
+var initialAmount;
 var client;
 beforeAll(() => {
     menu = singletonMenu.getMenu();
+    initialAmount = menu.amount;
     client = {
         name: "Client",
         pay: function(amount) {
@@ -20,7 +22,7 @@ test("Correct initalization", () => {
 
 test("Correct dispatch", () => {
     menu.dispatch(client);
-    expect(menu.amount).toBeLessThan(100);
+    expect(menu.amount).toBeLessThan(initialAmount);
     expect(menu.orders).toContain("Client");
 })
 
