@@ -16,5 +16,8 @@
     "bugs": {
         "url": "https://github.com/daniarques11/Ricksy_business_JS/issues"
     },
-    "homepage": "https://github.com/daniarques11/Ricksy_business_JS#readme"
+    "homepage": "https://github.com/daniarques11/Ricksy_business_JS#readme",
+    "devDependencies": {
+        "jest": "^26.6.3"
+    }
 }
