@@ -1,0 +1,117 @@
+{
+    "ufos": [{
+            "Marca": "Droide",
+            "Modelo": "UT-60D",
+            "Precio": "20₿",
+            "Combustible": "Eléctrico",
+            "Asientos": "2",
+            "Distancia": "Galaxia",
+            "Tipo": "Transporte"
+        },
+        {
+            "Marca": "Radiant",
+            "Modelo": "Luxury-3000",
+            "Precio": "100₿",
+            "Combustible": "Hidráulico",
+            "Asientos": "25",
+            "Distancia": "Inter-Galáctico",
+            "Tipo": "Ocio"
+        },
+        {
+            "Marca": "Battle-Ga",
+            "Modelo": "Raptor",
+            "Precio": "35₿",
+            "Combustible": "Fósil",
+            "Asientos": "5",
+            "Distancia": "Sistema",
+            "Tipo": "Solar"
+        },
+        {
+            "Marca": "Droide",
+            "Modelo": "Buitre",
+            "Precio": "25₿",
+            "Combustible": "Fósil",
+            "Asientos": "2",
+            "Distancia": "Inter-Galáctico",
+            "Tipo": "Transporte"
+        },
+        {
+            "Marca": "Radiant",
+            "Modelo": "VII",
+            "Precio": "70₿",
+            "Combustible": "Eléctrico",
+            "Asientos": "10",
+            "Distancia": "Inter-Galáctico",
+            "Tipo": "Ocio"
+        }, {
+            "Marca": "Razer",
+            "Modelo": "Crest",
+            "Precio": "100₿",
+            "Combustible": "Hidráulico",
+            "Asientos": "25",
+            "Distancia": "Inter-Galáctico",
+            "Tipo": "Ocio"
+        }, {
+            "Marca": "Razer",
+            "Modelo": "Stelar-Naboo",
+            "Precio": "25₿",
+            "Combustible": "Fósil",
+            "Asientos": "2",
+            "Distancia": "Galaxia",
+            "Tipo": "Transporte"
+        },
+        {
+            "Marca": "Droide",
+            "Modelo": "TIE-Fighter",
+            "Precio": "20₿",
+            "Combustible": "Eléctrico",
+            "Asientos": "2",
+            "Distancia": "Galaxia",
+            "Tipo": "Transporte"
+        },
+        {
+            "Marca": "Radiant",
+            "Modelo": "A-Wing",
+            "Precio": "15₿",
+            "Combustible": "Hidráulico",
+            "Asientos": "2",
+            "Distancia": "Sistema",
+            "Tipo": "Solar"
+        },
+        {
+            "Marca": "Radiant",
+            "Modelo": "X-Wing",
+            "Precio": "20₿",
+            "Combustible": "Eléctrico",
+            "Asientos": "2",
+            "Distancia": "Galaxia",
+            "Tipo": "Transporte"
+        },
+        {
+            "Marca": "Battle-Ga",
+            "Modelo": "Blackbird",
+            "Precio": "15₿",
+            "Combustible": "Fósil",
+            "Asientos": "2",
+            "Distancia": "Sistema",
+            "Tipo": "Solar"
+        }, {
+            "Marca": "Battle-Ga",
+            "Modelo": "Apollo's",
+            "Precio": "Viper",
+            "Combustible": "20₿",
+            "Asientos": "Hidráulico",
+            "Distancia": "2",
+            "Tipo": "Galaxia"
+        },
+        {
+            "Marca": "Radiant",
+            "Modelo": "Starfighter",
+            "Precio": "20₿",
+            "Combustible": "Eléctrico",
+            "Asientos": "2 ",
+            "Distancia": "Galaxia",
+            "Tipo": "Transporte "
+        }
+    ]
+}

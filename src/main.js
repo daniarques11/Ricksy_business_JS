@@ -13,10 +13,13 @@ console.log("\n" + "Tarjeta de Abradolph" + "\n" +
     "====================");
 console.log(abradolph);
 
-// Da de alta en la flota de ovnis 2 UFOS.
-var ufosID = ["unx", "dox"];
-for (let ufo of ufosID) {
+// Da de alta en la flota de ovnis los UFOS (solo los dos primeros)
+const ufosJSON = require("../static/json/ufos.json").ufos;
+for (let ufo of ufosJSON) {
     ufos.add(ufo);
+    if (ufos.flota.size == 2) {
+        break;
+    }
 }
 console.log(ufos);
 
@@ -26,7 +29,7 @@ ufos.dispatch(abradolph);
 // Mostramos el ID del ovni asignado a Abradolph
 console.log("\nOvni de Abradolph" + " \n" +
     "=================");
-console.log(ufos.getUfoOf(abradolph.number) + "\n");
+console.log(ufos.print(ufos.getUfoOf(abradolph.number) + "\n"));
 // Mostramos el credito de la tarjeta del cliente
 console.log("Credito de Abradolph: " + abradolph.credit);
 
@@ -36,7 +39,7 @@ console.log("Credito de Abradolph: " + abradolph.credit);
 console.log("\nAbradolph quiere otro ovni\n" +
     "==========================");
 console.log("Su credito no ha cambiado: " + abradolph.credit);
-console.log("Ovni de Abradolph: " + ufos.getUfoOf(abradolph.number));
+console.log("Ovni de Abradolph: " + ufos.print(ufos.getUfoOf(abradolph.number)));
 
 // A GearHead le vacía la tarjeta el alien "Cámara Lenta" 
 // mientras le daba la chapa, justo antes de pagar el ovni.
@@ -48,7 +51,7 @@ var gearHead = instanceCreditCard("Gearhead", "8888888888888888");
 gearHead.pay(3000); // le vacían la cartera
 ufos.dispatch(gearHead);
 console.log("Su credito es cero: " + gearHead.credit);
-console.log("No puede reservar ovni: " + ufos.getUfoOf(gearHead.number));
+console.log("No puede reservar ovni: " + ufos.print(ufos.getUfoOf(gearHead.number)));
 
 // Squanchy deja su ovni reservado
 // antes de irse a squanchear
@@ -57,7 +60,7 @@ console.log("\nLLega Squanchy!\n" +
 var squanchy = instanceCreditCard("Squanchy", "4444444444444444");
 ufos.dispatch(squanchy);
 console.log("Su credito es: " + squanchy.credit);
-console.log("Su ovni es: " + ufos.getUfoOf(squanchy.number));
+console.log("Su ovni es: " + ufos.print(ufos.getUfoOf(squanchy.number)));
 
 // Morty quiere un ovni para huir de la fiesta
 // pero ya no queda ninguno disponible
@@ -66,17 +69,18 @@ console.log("\nAlgun ovni para Morty?\n" +
 var morty = instanceCreditCard("Morty", "0000000000000000");
 ufos.dispatch(morty);
 console.log("Su credito no ha cambiado: " + morty.credit);
-console.log("No hay ovni Morty: " + ufos.getUfoOf(morty.number));
+console.log("No hay ovni Morty: " + ufos.print(ufos.getUfoOf(morty.number)));
 
 // Metemos un ovni más en la flota de ovnis
 // y mostramos la flota por consola
 console.log("\nFlota de ovnis\n" +
     "==============");
-ufos.add("trex");
+ufos.add(ufosJSON[3]);
 console.log(ufos);
 
 // Crear expendedor de cristales
-var packExpender = instancePackExpender(3);
+const packSelected = require("../static/json/pack.json")[0];
+var packExpender = instancePackExpender(parseInt(packSelected.stock), parseInt(packSelected.precio));
 
 // Muestra el total de packs y su precio unidad
 console.log("\nPacks\n" +
@@ -111,7 +115,8 @@ receptivo.dispatch(squanchy);
 function mostrarReserva(client) {
     console.log(client);
     console.log("Packs: " + packExpender.amount);
-    console.log("Ufo: " + ufos.getUfoOf(client.number))
+    let ufo = ufos.print(ufos.getUfoOf(client.number));
+    console.log("Ufo: " + ufos.print(ufo));
 }
 mostrarReserva(squanchy);
 

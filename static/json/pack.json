@@ -1,0 +1,776 @@
+[{
+    "_id": {
+        "$oid": "5fcd6845ce2065f1e44f40f7"
+    },
+    "Nombre pack": "Pack Morty Style",
+    "calidad": "Premium",
+    "precio": "30€",
+    "stock": "23",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Gorro de fiesta volador": {
+            "caracteristicas": {
+                "Color": "Azul",
+                "Cantidad": "1",
+                "Material": "Oro"
+            }
+        },
+        "Píldora teletransportadora": {
+            "caracteristicas": {
+                "Cantidad": "3 ",
+                "Calidad": "Premium"
+            }
+        },
+        "Rayo congelador": {
+            "caracteristicas": {
+                " Color": "Blanco",
+                "Cantidad": "1",
+                "Materiales": "Plástico, titanio, alumino."
+            }
+        },
+        "Arma de pepinillo Rick": {
+            "caracteristicas": {
+                " Color": "verde",
+                "Material": "un pepinillo "
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40f8"
+    },
+    "Nombre pack": "Pack Rick Style",
+    "calidad": "Premium",
+    "precio": "30€",
+    "stock": "35",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Pistola de portales": {
+            "caracteristicas": {
+                "Color": "Blanca",
+                "Cantidad": "1",
+                "Material": "Platino"
+            }
+        },
+        "Plumbus": {
+            "caracteristicas": {
+                "Cantidad": "1 ",
+                "Utilidad": "ninguna"
+            }
+        },
+        "Evil Morty": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Arma": "istola laser"
+            }
+        },
+        "Robot mantequillero": {
+            "caracteristicas": {
+                "Cantidad": "1 ",
+                " Color": "Blanco",
+                "Material": "Plata ",
+                "Mantequilla": "1 barra "
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40f9"
+    },
+    "Nombre pack": "Pack para niños",
+    "calidad": "Premium",
+    "precio": "25€",
+    "stock": "47",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Chuches especiales con poderes": {
+            "caracteristicas": {
+                "Color": "Multicolor",
+                "Cantidad": "10",
+                "Materiales": "Azúcar y colorante"
+            }
+        },
+        "Balón anti-gravedad": {
+            "caracteristicas": {
+                "Color": "Lila",
+                "Cantidad": "1 "
+            }
+        },
+        "Cuerda infinita": {
+            "caracteristicas": {
+                "Color": "Blanco",
+                "Longitud": "Extensible",
+                "Cantidad": "1",
+                "Materiales": "Tela"
+            }
+        },
+        "Crucero espacial de juguete": {
+            "caracteristicas": {
+                " Cantidad": "1",
+                "Asientos": "4"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40fa"
+    },
+    "Nombre pack": "Pack para atronautas",
+    "calidad": "Premium",
+    "precio": "25€",
+    "stock": "6",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Pistola anti marcianos": {
+            "caracteristicas": {
+                "Color": "Gris",
+                "Material": "Titanio",
+                "Calidad": "Maravillosa"
+            }
+        },
+        "Pantalla lunar": {
+            "caracteristicas": {
+                "Color": "Blanco"
+            }
+        },
+        "Cohete": {
+            "caracteristicas": {
+                "Color": "Rojo",
+                "Materiales": "Titanio",
+                "Calidad": "Óptima"
+            }
+        },
+        "Crucero espacial estándar": {
+            "caracteristicas": {
+                " Cantidad": "1",
+                "Asientos": "4"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40fb"
+    },
+    "Nombre pack": "Pack para animalistas",
+    "calidad": "Premium",
+    "precio": "28,50€",
+    "stock": "74",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Ovillos de lana mágicos": {
+            "caracteristicas": {
+                "Color": "Naranja",
+                "Material": "Lana",
+                "Cantidad": "2"
+            }
+        },
+        "Correa de invisibilidad": {
+            "caracteristicas": {
+                "Color": "invisible",
+                "Material": "Plástico",
+                "Calidad": "Premium"
+            }
+        },
+        "Caseta de perrito intergaláctica": {
+            "caracteristicas": {
+                "Color": "Dorado",
+                "Materiales": "Oro",
+                "Calidad": "Óptima"
+            }
+        },
+        "Gadget traductor de lenguaje animal a humano": {
+            "caracteristicas": {
+                "Calidad": "Óptima"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40fc"
+    },
+    "Nombre pack": "Pack para militares",
+    "calidad": "Premium",
+    "precio": "28,50€",
+    "stock": "15",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Pistola laser": {
+            "caracteristicas": {
+                "Color": "Azul",
+                "Material": "Titanio",
+                "Calidad": "Premium"
+            }
+        },
+        "Capa de invisibilidad": {
+            "caracteristicas": {
+                "Color": "invisible",
+                "Material": "Plástico",
+                "Calidad": "Premium"
+            }
+        },
+        "Armadura a prueba de todo": {
+            "caracteristicas": {
+                "Color": "verde",
+                "Materiales": "Diamante",
+                "Calidad": "Óptima"
+            }
+        },
+        "Arma de pepinillo Rick": {
+            "caracteristicas": {
+                " Color": "verde",
+                "Material": "un pepinillo "
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40fd"
+    },
+    "Nombre pack": "Pack para viajeros",
+    "calidad": "Premium",
+    "precio": "30€",
+    "stock": "22",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Llave intergaláctica": {
+            "caracteristicas": {
+                "Color": "Rosa",
+                "Material": "platino",
+                "Calidad": "Premium"
+            }
+        },
+        "Arma de portal": {
+            "caracteristicas": {
+                "Color": "gris",
+                "Material": "Tantalio",
+                "Calidad": "Maravillosa"
+            }
+        },
+        "Píldora teletransportadora": {
+            "caracteristicas": {
+                "Cantidad": "3 ",
+                "Calidad": "Premium"
+            }
+        },
+        "Crucero espacial estándar": {
+            "caracteristicas": {
+                " Cantidad": "1",
+                "Asientos": "4"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6846ce2065f1e44f40fe"
+    },
+    "Nombre pack": "Pack diversión",
+    "calidad": "Premium",
+    "precio": "25€",
+    "stock": "2",
+    "dimensiones": {
+        "altura": "5 cm ",
+        "ancho": "10 cm"
+    },
+    "contenidos": {
+        "Gorro de fiesta volador": {
+            "caracteristicas": {
+                "Color": "Azul",
+                "Cantidad": "1",
+                "Material": "Oro"
+            }
+        },
+        "Balón anti-gravedad": {
+            "caracteristicas": {
+                "Color": "Lila",
+                "Cantidad": "1 "
+            }
+        },
+        "Inyección de felicidad": {
+            "caracteristicas": {
+                "Cantidad": "3 ",
+                "Calidad": "Maravillosa"
+            }
+        },
+        "Poción del amor": {
+            "caracteristicas": {
+                "Color": "Naranja",
+                "Cantidad": "3",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f40ff"
+    },
+    "Nombre pack": "Pack Meeseek",
+    "calidad": "Standard",
+    "precio": "20€",
+    "stock": "89",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Meeseeks box": {
+            "caracteristicas": {
+                "Color": "Azul",
+                "Cantidad": "1",
+                "Material": "Titanio"
+            }
+        },
+        "Revolver": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Cargador": "6 ",
+                "Material": "Hierro"
+            }
+        },
+        "Escoba": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Materiales": "Madera."
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4100"
+    },
+    "Nombre pack": "Pack Microscopico",
+    "calidad": "Standard",
+    "precio": "20€",
+    "stock": "104",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Bateria Miniverso": {
+            "caracteristicas": {
+                "Color": "Morado",
+                "Cantidad": "1",
+                "Material": "Titanio"
+            }
+        },
+        "Parque de atracciones indestinal": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Atracciones": "3 "
+            }
+        },
+        "Encogedor": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Materiales": "Platino."
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4101"
+    },
+    "Nombre pack": "Pack Covid",
+    "calidad": "Standard",
+    "precio": "23,50€",
+    "stock": "34",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Cura del Covid": {
+            "caracteristicas": {
+                "Color": "Morado",
+                "Cantidad": "1",
+                "Contenedor": "Jeringa"
+            }
+        },
+        "ADN paciente 0": {
+            "caracteristicas": {
+                "Cantidad": "10",
+                "Pelo": "Castaño "
+            }
+        },
+        "Desinfectante": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "Acido"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4102"
+    },
+    "Nombre pack": "Pack Guerra Galáctica",
+    "calidad": "Standard",
+    "precio": "18,50€",
+    "stock": "140",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Album Maluma": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Tipo": "Blu-ray"
+            }
+        },
+        "Autografo David Bisbal": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Color": "dorado "
+            }
+        },
+        "Resido nuclear": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "Uranio"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4103"
+    },
+    "Nombre pack": "Pack Informatico",
+    "calidad": "Standard",
+    "precio": "20€",
+    "stock": "28",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Libro Python de la rata espacial": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "Papel"
+            }
+        },
+        "Disco duro 500 Yottabytes": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "Plutonio "
+            }
+        },
+        "Guia Github": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "Holografico"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4104"
+    },
+    "Nombre pack": "Pack AdultSwim",
+    "calidad": "Standard",
+    "precio": "15€",
+    "stock": "95",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Blu-ray Temporada 3 Rick y Morty": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Tipo": "Blu-ray",
+                "Discos": "2"
+            }
+        },
+        "Autografo Bruce Taylor": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Color": "Azul "
+            }
+        },
+        "FLCL Blu-ray edición coleccionista": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Tipo": "Blu-ray",
+                "Material": "Oro"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6847ce2065f1e44f4105"
+    },
+    "Nombre pack": "Pack PickleRick",
+    "calidad": "Standard",
+    "precio": "18,50€",
+    "stock": "130",
+    "dimensiones": {
+        "altura": "4 cm ",
+        "ancho": "8 cm"
+    },
+    "contenidos": {
+        "Peluche Pickle Rick": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Material": "algodon"
+            }
+        },
+        "Pepinillo": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Color": "Verde "
+            }
+        },
+        "Cadáver de rata": {
+            "caracteristicas": {
+                "Cantidad": "1",
+                "Putrefacto": "si"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f4106"
+    },
+    "Nombre pack": "Pack Squanchy Style",
+    "calidad": "Basic",
+    "precio": "10€",
+    "stock": "158",
+    "dimensiones": {
+        "altura": "3 cm",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Rifle de pulso": {
+            "caracteristicas": {
+                "Color": "Verde",
+                "Cantidad": "1",
+                "Material": "Cadmio",
+                "Calidad": "Decente"
+            }
+        },
+        "Poción del arcoiris": {
+            "caracteristicas": {
+                "Color": "multicolor",
+                "Cantidad": "3",
+                "Calidad": "Más o menos"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f4107"
+    },
+    "Nombre pack": "Pack para gangsters",
+    "calidad": "Basic",
+    "precio": "10€",
+    "stock": "219",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Rifle de pulso": {
+            "caracteristicas": {
+                "Color": "Verde",
+                "Cantidad": "1",
+                "Material": "Cadmio",
+                "Calidad": "Decente"
+            }
+        },
+        "Cuchillo láser": {
+            "caracteristicas": {
+                "Color": "Rojo",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f4108"
+    },
+    "Nombre pack": "Pack Donald Trump",
+    "calidad": "Basic",
+    "precio": "13,50€",
+    "stock": "120",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "AK-47": {
+            "caracteristicas": {
+                "Color": "Rojo",
+                "Material": "Acero",
+                "Calidad": "Buena"
+            }
+        },
+        "Bandera nacional": {
+            "caracteristicas": {
+                "Color": "multicolor",
+                "Cantidad": "3",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f4109"
+    },
+    "Nombre pack": "Pack piscina",
+    "calidad": "Basic",
+    "precio": "10€",
+    "stock": "270",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Bañador de invisibilidad": {
+            "caracteristicas": {
+                "Color": "Negro",
+                "Cantidad": "1",
+                "Material": "Nylon",
+                "Calidad": "Funciona cuando quiere"
+            }
+        },
+        "Flotador volador con forma de pato": {
+            "caracteristicas": {
+                "Color": "amarillo",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f410a"
+    },
+    "Nombre pack": "Pack brujas",
+    "calidad": "Basic",
+    "precio": "7,50€",
+    "stock": "47",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Poción del arcoiris": {
+            "caracteristicas": {
+                "Color": "multicolor",
+                "Cantidad": "1",
+                "Calidad": "Más o menos"
+            }
+        },
+        "Poción del amor": {
+            "caracteristicas": {
+                "Color": "Naranja",
+                "Cantidad": "1",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f410b"
+    },
+    "Nombre pack": "Pack para maquilladores",
+    "calidad": "Basic",
+    "precio": "10€",
+    "stock": "87",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Paleta de colores": {
+            "caracteristicas": {
+                "Color": "multicolor",
+                "Cantidad": "10",
+                "Calidad": "Más o menos"
+            }
+        },
+        "Labial": {
+            "caracteristicas": {
+                "Color": "Rojo",
+                "Cantidad": "3",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f410c"
+    },
+    "Nombre pack": "Pack para niño low-cost",
+    "calidad": "Basic",
+    "precio": "10€",
+    "stock": "243",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Chuches corrientes sin poderes": {
+            "caracteristicas": {
+                "Color": "multicolor",
+                "Cantidad": "5",
+                "Materiales": "Azúcar y colorante"
+            }
+        },
+        "Gorro de fiesta sin más": {
+            "caracteristicas": {
+                "Color": "verde moco",
+                "Calidad": "Buena"
+            }
+        }
+    }
+}, {
+    "_id": {
+        "$oid": "5fcd6848ce2065f1e44f410d"
+    },
+    "Nombre pack": "Pack para Payasos",
+    "calidad": "Basic",
+    "precio": "13,50€",
+    "stock": "67",
+    "dimensiones": {
+        "altura": "3 cm ",
+        "ancho": "6 cm"
+    },
+    "contenidos": {
+        "Nariz de Payaso": {
+            "caracteristicas": {
+                "Color": "Rojo",
+                "Material": "Plástico",
+                "Calidad": "Óptima"
+            }
+        },
+        "Peluca de Payaso": {
+            "caracteristicas": {
+                "Color": "Multicolor",
+                "Calidad": "Un poco rota"
+            }
+        }
+    }
+}]

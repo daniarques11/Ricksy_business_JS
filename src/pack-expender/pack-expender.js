@@ -1,8 +1,8 @@
 /* Describes the information of a certain welcome pack expender */
 
-function PackExpender(amount) {
+function PackExpender(amount, price) {
     this.amount = amount;
-    this.price = 50;
+    this.price = price;
 }
 
 PackExpender.prototype.dispatch = function(client) {
@@ -11,8 +11,8 @@ PackExpender.prototype.dispatch = function(client) {
     }
 }
 
-function instancePackExpender(amount) {
-    return new PackExpender(amount);
+function instancePackExpender(amount, price) {
+    return new PackExpender(amount, price);
 }
 
 module.exports.instancePackExpender = instancePackExpender;
