@@ -1,3 +1,5 @@
+/* Describes the information of a certain welcome pack expender */
+
 function PackExpender(amount) {
     this.amount = amount;
     this.price = 50;

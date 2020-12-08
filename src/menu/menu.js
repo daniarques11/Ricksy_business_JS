@@ -1,5 +1,8 @@
-function Menu(amount) {
-    this.amount = amount;
+/* Describes the information of the menu
+When a menu is given, the client is stored in a list*/
+
+function Menu() {
+    this.amount = 100;
     this.price = 100;
     this.orders = [];
 }
@@ -12,11 +15,11 @@ Menu.prototype.dispatch = function(client) {
 }
 
 var menu = (function() {
-    var instanceMenu = new Menu(100);
+    var singletonMenu = new Menu();
 
     return {
         getMenu: function getMenu() {
-            return instanceMenu;
+            return singletonMenu;
         }
     };
 })();

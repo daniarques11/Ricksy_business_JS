@@ -1,3 +1,5 @@
+/* Stores the information of the ufos available
+When an ufo is assigned to a client, that ufo is no longer available*/
 function UfosPark() {
     this.fee = 500;
     this.flota = new Map();
@@ -35,11 +37,11 @@ UfosPark.prototype.dispatch = function(client) {
 /* Exported variable. 
 Singleton pattern, not allowed different UfosPark objects */
 var flota = (function() {
-    var ufosParkInstance = new UfosPark();
+    var singletonUfosPark = new UfosPark();
 
     return {
         getUfosPark: function getUfosPark() {
-            return ufosParkInstance;
+            return singletonUfosPark;
         }
     };
 })();
