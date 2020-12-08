@@ -1,11 +1,14 @@
 {
-  "name": "pack-expender",
-  "version": "1.0.0",
-  "description": "",
-  "main": "pack-expender.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Daniel Arques",
-  "license": "MIT"
+    "name": "pack-expender",
+    "version": "1.0.0",
+    "description": "",
+    "main": "pack-expender.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "Daniel Arques",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^26.6.3"
+    }
 }

@@ -3,9 +3,6 @@ const instancePackExpender = require("./pack-expender").instancePackExpender;
 const singletonUfosPark = require("./ufos-park").flota;
 const singletonReceptivo = require("./receptivo").receptivo;
 const singletonMenu = require("./menu").menu;
-//TODO: Implementar modulo DISPATCHER
-
-
 
 //Crear abradolph
 var abradolph = instanceCreditCard("Abradolph Lincler", "4916119711304546");
@@ -80,13 +77,6 @@ console.log(ufos);
 
 // Crear expendedor de cristales
 var packExpender = instancePackExpender(3);
-
-// Añadir metodo dispatch al expendedor de cristales
-Object.getPrototypeOf(packExpender).dispatch = function dispatch(client) {
-    if (this.amount > 0 && client.pay(this.price)) {
-        this.amount -= 1;
-    }
-}
 
 // Muestra el total de packs y su precio unidad
 console.log("\nPacks\n" +

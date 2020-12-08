@@ -1,3 +1,4 @@
+/*Stores observers. Dispatches a client with all the observers when it is required*/
 function Receptivo() {
     this.observers = [];
 }
@@ -13,11 +14,11 @@ Receptivo.prototype.dispatch = function(client) {
 };
 
 var receptivo = (function() {
-    var instanceReceptivo = new Receptivo();
+    var singletonReceptivo = new Receptivo();
 
     return {
         getReceptivo: function getReceptivo() {
-            return instanceReceptivo;
+            return singletonReceptivo;
         }
     };
 })();
