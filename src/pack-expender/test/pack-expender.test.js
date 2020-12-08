@@ -3,8 +3,8 @@ var lastPack;
 var onePack;
 var client;
 beforeEach(() => {
-    lastPack = instancePackExpender(1);
-    onePack = instancePackExpender(1);
+    lastPack = instancePackExpender(1, 50);
+    onePack = instancePackExpender(1, 50);
     client = {
         pay: function(amount) {
             return true;
