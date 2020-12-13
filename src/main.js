@@ -29,7 +29,7 @@ ufos.dispatch(abradolph);
 // Mostramos el ID del ovni asignado a Abradolph
 console.log("\nOvni de Abradolph" + " \n" +
     "=================");
-console.log(ufos.print(ufos.getUfoOf(abradolph.number) + "\n"));
+console.log(ufos.print(ufos.getUfoOf(abradolph.number)) + "\n");
 // Mostramos el credito de la tarjeta del cliente
 console.log("Credito de Abradolph: " + abradolph.credit);
 
@@ -116,7 +116,7 @@ function mostrarReserva(client) {
     console.log(client);
     console.log("Packs: " + packExpender.amount);
     let ufo = ufos.print(ufos.getUfoOf(client.number));
-    console.log("Ufo: " + ufos.print(ufo));
+    console.log("Ufo: " + ufo);
 }
 mostrarReserva(squanchy);
 
